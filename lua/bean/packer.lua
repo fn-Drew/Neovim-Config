@@ -13,17 +13,17 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
- -- use { "catppuccin/nvim", as = "catppuccin" }
-  -- vim.cmd.colorscheme 'catppuccin-mocha'
+  use { "catppuccin/nvim", as = "catppuccin" }
+  vim.cmd.colorscheme 'catppuccin-mocha'
 
-  use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  require("rose-pine").setup()
-		  vim.cmd('colorscheme rose-pine')
-	  end
-  })
+--  use({
+--	  'rose-pine/neovim',
+--	  as = 'rose-pine',
+--	  config = function()
+--		  require("rose-pine").setup()
+--		  vim.cmd('colorscheme rose-pine')
+--	  end
+--  })
 
  -- Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -31,4 +31,28 @@ return require('packer').startup(function(use)
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
+
+  use {
+	  'VonHeikemen/lsp-zero.nvim',
+	 ebranch = 'v1.x',
+	  requires = {
+		  -- LSP Support
+		  {'neovim/nvim-lspconfig'},             -- Required
+		  {'williamboman/mason.nvim'},           -- Optional
+		  {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+		  -- Autocompletion
+		  {'hrsh7th/nvim-cmp'},         -- Required
+		  {'hrsh7th/cmp-nvim-lsp'},     -- Required
+		  {'hrsh7th/cmp-buffer'},       -- Optional
+		  {'hrsh7th/cmp-path'},         -- Optional
+		  {'saadparwaiz1/cmp_luasnip'}, -- Optional
+		  {'hrsh7th/cmp-nvim-lua'},     -- Optional
+
+		  -- Snippets
+		  {'L3MON4D3/LuaSnip'},             -- Required
+		  {'rafamadriz/friendly-snippets'}, -- Optional
+	  }
+  }
+
 end)
