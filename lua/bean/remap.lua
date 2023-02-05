@@ -6,7 +6,7 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- when using J it don't place cursor at the end of the line
+-- when using J it doesn't place cursor at the end of the line
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- keeps cursor in the middle of the screen when using <C-d> and <C-u>
