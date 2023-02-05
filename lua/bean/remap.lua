@@ -1,5 +1,10 @@
 vim.g.mapleader = " "
 -- (mode, keybind, command that it executes)
+
+-- open vim file explorer
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+-- open vim file explorer in new tab
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- move highlighted text
@@ -13,7 +18,7 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- keeps cursor in the middle of the screen when searching 
+-- keeps cursor in the middle of the screen when searching
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
@@ -29,7 +34,14 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- Replace all occurences of current word
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- go to packer.lua
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/bean/packer.lua<CR>");
+
+-- yank to system clipboard
+vim.keymap.set("n", "<leader>y", '"+y')
+
+-- yank whole file to system clipboard
+vim.keymap.set("n", "<leader>Y", 'gg"+yG')
