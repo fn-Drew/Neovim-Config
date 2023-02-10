@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>fe", vim.cmd.Exe, {desc = "File Explorer"})
+vim.keymap.set("n", "<leader>fe", vim.cmd.Ex, {desc = "File Explorer"})
 vim.keymap.set("n", "<leader>fn", vim.cmd.Vex, {desc = "New Tab File Explorer"})
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", {desc = "Move Highlighted Text Up"})

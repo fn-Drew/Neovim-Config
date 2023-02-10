@@ -1,9 +1,9 @@
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
-vim.keymap.set('n', '<leader>ts', builtin.git_files, {})
-vim.keymap.set('n', '<leader>ne', function()
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {desc = "Search Workspace Files"})
+vim.keymap.set('n', '<leader>fg', builtin.git_files, {desc = "Search Git Files"})
+vim.keymap.set('n', '<leader>gr', function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") });
-end)
+end, {desc = "Grep Workspace"})
 
 vim.keymap.set('n', '<leader>/', function()
     -- You can pass additional configuration to telescope to change theme, layout, etc.
