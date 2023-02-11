@@ -25,6 +25,8 @@ return require('packer').startup(function(use)
             requires = { 'kyazdani42/nvim-web-devicons', opt = true }
         }
 
+        use "lukas-reineke/indent-blankline.nvim"
+
         use {
             'numToStr/Comment.nvim',
             config = function()
@@ -47,19 +49,46 @@ return require('packer').startup(function(use)
         use {
             'norcalli/nvim-colorizer.lua',
             require('colorizer').setup {
-                -- config
+                css = {
+                    -- config
+                    RGB      = true, -- #RGB hex codes
+                    RRGGBB   = true, -- #RRGGBB hex codes
+                    names    = true, -- "Name" codes like Blue
+                    RRGGBBAA = true, -- #RRGGBBAA hex codes
+                    rgb_fn   = true, -- CSS rgb() and rgba() functions
+                    hsl_fn   = true, -- CSS hsl() and hsla() functions
+                    css      = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+                    css_fn   = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+                    -- Available modes: foreground, background
+                    mode     = 'background', -- Set the display mode.
+                },
+                html = {
+                    -- config
+                    RGB      = true, -- #RGB hex codes
+                    RRGGBB   = true, -- #RRGGBB hex codes
+                    names    = true, -- "Name" codes like Blue
+                    RRGGBBAA = true, -- #RRGGBBAA hex codes
+                    rgb_fn   = true, -- CSS rgb() and rgba() functions
+                    hsl_fn   = true, -- CSS hsl() and hsla() functions
+                    css      = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+                    css_fn   = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+                    -- Available modes: foreground, background
+                    mode     = 'background', -- Set the display mode.
+                }
+
             }
         }
 
-        -- Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
         use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
         use('nvim-treesitter/playground')
         use('theprimeagen/harpoon')
         use('mbbill/undotree')
         use('tpope/vim-fugitive')
-
         use('jose-elias-alvarez/null-ls.nvim')
         use('MunifTanjim/prettier.nvim')
+
+        -- fun
+        use('eandrju/cellular-automaton.nvim')
 
         use {
             'VonHeikemen/lsp-zero.nvim',
