@@ -85,16 +85,6 @@ _G.packer_plugins = {
     path = "/home/bean/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ayu = {
-    loaded = true,
-    path = "/home/bean/.local/share/nvim/site/pack/packer/start/ayu",
-    url = "https://github.com/Shatur/neovim-ayu"
-  },
-  catppuccin = {
-    loaded = true,
-    path = "/home/bean/.local/share/nvim/site/pack/packer/start/catppuccin",
-    url = "https://github.com/catppuccin/nvim"
-  },
   ["cellular-automaton.nvim"] = {
     loaded = true,
     path = "/home/bean/.local/share/nvim/site/pack/packer/start/cellular-automaton.nvim",
@@ -130,9 +120,9 @@ _G.packer_plugins = {
     path = "/home/bean/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
-  gruvbox = {
+  ["gruvbox.nvim"] = {
     loaded = true,
-    path = "/home/bean/.local/share/nvim/site/pack/packer/start/gruvbox",
+    path = "/home/bean/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
   harpoon = {
@@ -144,6 +134,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bean/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["kanagawa.nvim"] = {
+    loaded = true,
+    path = "/home/bean/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -165,15 +160,20 @@ _G.packer_plugins = {
     path = "/home/bean/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  moonfly = {
+  ["neovim-ayu"] = {
     loaded = true,
-    path = "/home/bean/.local/share/nvim/site/pack/packer/start/moonfly",
-    url = "https://github.com/bluz71/vim-moonfly-colors"
+    path = "/home/bean/.local/share/nvim/site/pack/packer/start/neovim-ayu",
+    url = "https://github.com/Shatur/neovim-ayu"
   },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/home/bean/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
+  nvim = {
+    loaded = true,
+    path = "/home/bean/.local/share/nvim/site/pack/packer/start/nvim",
+    url = "https://github.com/catppuccin/nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -240,6 +240,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bean/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-moonfly-colors"] = {
+    loaded = true,
+    path = "/home/bean/.local/share/nvim/site/pack/packer/start/vim-moonfly-colors",
+    url = "https://github.com/bluz71/vim-moonfly-colors"
   },
   ["which-key.nvim"] = {
     config = { "\27LJ\2\nt\0\0\3\0\a\0\0156\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0" },

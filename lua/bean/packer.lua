@@ -14,10 +14,12 @@ return require('packer').startup(function(use)
         }
 
         -- Color Schemes
-        use { "bluz71/vim-moonfly-colors", as = "moonfly" }
-        use { "ellisonleao/gruvbox.nvim", as = "gruvbox" }
-        use { "catppuccin/nvim", as = "catppuccin" }
-        use { "Shatur/neovim-ayu", as = "ayu" }
+        use("catppuccin/nvim")
+        use("bluz71/vim-moonfly-colors")
+        use("Shatur/neovim-ayu")
+        use("ellisonleao/gruvbox.nvim")
+        use("rebelot/kanagawa.nvim")
+
         -- vim.cmd.colorscheme 'catppuccin-mocha'
 
         use {
@@ -87,7 +89,6 @@ return require('packer').startup(function(use)
 
         use('mbbill/undotree')
         use('tpope/vim-fugitive')
-        use('jose-elias-alvarez/null-ls.nvim')
         use('MunifTanjim/prettier.nvim')
 
         -- fun
