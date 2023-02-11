@@ -21,11 +21,9 @@ vim.keymap.set("n", "<leader>Y", 'gg"+yG', { desc = "Yank File To Clipboard" })
 vim.keymap.set("n", "<leader>w", ':w<Enter>', { desc = "Save File" })
 vim.keymap.set("n", "<leader>rn", ':w !node<Enter>', { desc = "Run Node" })
 
-vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-    { desc = "Replace Current Word" })
+vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace Current Word" })
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/bean/packer.lua<CR>,",
-    { desc = "Go To packer.lua" })
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/bean/packer.lua<CR>", { desc = "Go To packer.lua" })
 
 vim.keymap.set("n", "<leader>so", ':so<Enter>', { desc = "Shout Out" })
 vim.keymap.set("n", "<leader>ps", ':PackerSync<Enter>', { desc = "Packer Sync" })
