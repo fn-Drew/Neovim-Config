@@ -29,3 +29,5 @@ vim.opt.updatetime = 50
 
 vim.o.ignorecase = true
 vim.o.smartcase = true
+
+vim.hidden = true
