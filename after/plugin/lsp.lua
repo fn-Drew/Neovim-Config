@@ -1,12 +1,28 @@
 local lsp = require("lsp-zero")
 
-lsp.preset("recommended")
+require('mason').setup()
 
+local mason_ls_status, mason_null_ls = pcall(require, "mason_null_ls")
+if not mason_ls_status then
+    return
+end
+
+-- linters, formatters
+mason_null_ls.setup({
+    ensure_installed = {
+        "prettier",
+        "eslint_d",
+    }
+})
+
+-- language servers
 lsp.ensure_installed({
     'lua_ls',
-    'tsserver',
-    'eslint',
 })
+
+lsp.preset("recommended")
+
+lsp.nvim_workspace()
 
 -- Fix Undefined global 'vim'
 lsp.configure('lua_ls', {
@@ -26,7 +42,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
         ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
         ['<C-y>'] = cmp.mapping.confirm({ select = true }),
         ['<C-Space>'] = cmp.mapping.confirm({ select = true }),
-    })
+})
 
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
@@ -46,6 +62,7 @@ lsp.set_preferences({
 
 -- unused client is required
 lsp.on_attach(function(client, bufnr)
+    print('ega goga')
     local opts = { buffer = bufnr, remap = false }
 
     -- go to definition
