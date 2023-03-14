@@ -14,5 +14,6 @@ null_ls.setup({
 		-- web dev
 		diagnostics.eslint_d,
 		formatting.eslint_d,
+		code_actions.eslint_d,
 	},
 })
