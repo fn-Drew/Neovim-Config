@@ -19,6 +19,9 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous Result" })
 vim.keymap.set("n", "<leader>y", '"+y', { desc = "Yank To Clipboard" })
 vim.keymap.set("n", "<leader>Y", 'gg"+yG', { desc = "Yank File To Clipboard" })
 
+-- keep what is in registry after pasting over other text
+vim.keymap.set("x", "<leader>p", [["_dP]])
+
 -- run c file with gcc
 vim.keymap.set("n", "<leader>rc", ":!gcc % -o %< && %<<enter>", { desc = "Run file with GCC" })
 -- make and run c file
