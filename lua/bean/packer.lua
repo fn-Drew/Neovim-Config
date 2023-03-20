@@ -39,7 +39,7 @@ return require("packer").startup(function(use)
 
 	use({
 		"lewis6991/gitsigns.nvim",
-		-- TODO keymaps for this
+		-- TODO: keymaps for this
 		config = function()
 			require("gitsigns").setup()
 		end,
@@ -59,8 +59,31 @@ return require("packer").startup(function(use)
 	})
 
 	use({
-		"norcalli/nvim-colorizer.lua",
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end,
 	})
+
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "*",
+		config = function()
+			require("toggleterm").setup()
+		end,
+	})
+
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+	})
+
+	use("folke/trouble.nvim")
+
+	use("norcalli/nvim-colorizer.lua")
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("nvim-treesitter/playground")
@@ -79,6 +102,7 @@ return require("packer").startup(function(use)
 		"jose-elias-alvarez/null-ls.nvim",
 		"jay-babu/mason-null-ls.nvim",
 	})
+
 	-- lsp
 	use({
 		"VonHeikemen/lsp-zero.nvim",
