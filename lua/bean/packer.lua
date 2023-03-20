@@ -4,9 +4,10 @@
 vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
-	-- Packer can manage itself
+	-- Packer plugin manager
 	use("wbthomason/packer.nvim")
 
+	-- fuzzy finder
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1",
@@ -14,96 +15,50 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
-	-- Color Schemes
+	-- VISUAL: Theme, statusline, etc.
 	use("catppuccin/nvim")
-	use("bluz71/vim-moonfly-colors")
-	use("Shatur/neovim-ayu")
-	use("ellisonleao/gruvbox.nvim")
-	use("rebelot/kanagawa.nvim")
-
-	-- vim.cmd.colorscheme 'catppuccin-mocha'
-
-	use({
-		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-	})
-
+	use("nvim-lualine/lualine.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
-
-	use({
-		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup()
-		end,
-	})
-
-	use({
-		"lewis6991/gitsigns.nvim",
-		-- TODO: keymaps for this
-		config = function()
-			require("gitsigns").setup()
-		end,
-		-- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
-	})
-
-	-- Which Key - Shows possible keybinds
-	use({
-		"folke/which-key.nvim",
-		config = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 300
-			require("which-key").setup({
-				-- config
-			})
-		end,
-	})
-
-	use({
-		"kylechui/nvim-surround",
-		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-		config = function()
-			require("nvim-surround").setup({
-				-- Configuration here, or leave empty to use defaults
-			})
-		end,
-	})
-
-	use({
-		"akinsho/toggleterm.nvim",
-		tag = "*",
-		config = function()
-			require("toggleterm").setup()
-		end,
-	})
-
-	use({
-		"folke/todo-comments.nvim",
-		requires = "nvim-lua/plenary.nvim",
-	})
-
-	use("folke/trouble.nvim")
-
+	use("lewis6991/gitsigns.nvim")
 	use("norcalli/nvim-colorizer.lua")
 
-	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
-	use("nvim-treesitter/playground")
+	-- diagnostics, show available keybinds
+	use("folke/which-key.nvim")
+	use("folke/trouble.nvim")
 
+	-- `gcc` to comment
+	use("numToStr/Comment.nvim")
+
+	use({ "kylechui/nvim-surround", tag = "*" })
+
+	-- toggleable terminal in neovim
+	use({ "akinsho/toggleterm.nvim", tag = "*" })
+
+	-- mark files, swap to them with <c-n>, etc.
 	use("theprimeagen/harpoon")
-	use("theprimeagen/vim-be-good")
 
+	-- <leader>u to view undo history
 	use("mbbill/undotree")
-	use("tpope/vim-fugitive")
-	use("MunifTanjim/prettier.nvim")
 
-	-- fun
-	use("eandrju/cellular-automaton.nvim")
+	-- vim git integration
+	use("tpope/vim-fugitive")
+
+	-- LSP, formatting, diagnostics, code actions
+	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+
+	use({
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		after = "nvim-treesitter",
+		requires = "nvim-treesitter/nvim-treesitter",
+	})
+
+	use("MunifTanjim/prettier.nvim")
 
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 		"jay-babu/mason-null-ls.nvim",
 	})
 
-	-- lsp
 	use({
 		"VonHeikemen/lsp-zero.nvim",
 		ebranch = "v1.x",
