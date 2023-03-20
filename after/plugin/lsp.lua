@@ -67,10 +67,12 @@ lsp.on_attach(function(client, bufnr)
 		vim.lsp.buf.workspace_symbol()
 	end, opts, { desc = "Search for Symbol" })
 
-	-- display what is being imported
+	-- display what is info about what is being imported
 	vim.keymap.set("n", "<leader>vd", function()
 		vim.diagnostic.open_float()
 	end, opts, { desc = "Import Information" })
+
+	-- navigate diagnostics
 	vim.keymap.set("n", "[d", function()
 		vim.diagnostic.goto_next()
 	end, opts)
@@ -81,10 +83,11 @@ lsp.on_attach(function(client, bufnr)
 	-- open code action menu for current code
 	vim.keymap.set("n", "<leader>vca", function()
 		vim.lsp.buf.code_action()
-	end, opts, { desc = "Code Actior" })
+	end, opts, { desc = "Code Actions" })
+
 	vim.keymap.set("n", "<leader>vrr", function()
 		vim.lsp.buf.references()
-	end, opts, { desc = "Reference" })
+	end, opts, { desc = "View All References" })
 end)
 
 lsp.setup()

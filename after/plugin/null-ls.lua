@@ -13,7 +13,7 @@ null_ls.setup({
 		formatting.stylua,
 		-- web dev
 		diagnostics.eslint_d,
-		formatting.eslint_d,
+		formatting.prettierd,
 		code_actions.eslint_d,
 	},
 })
