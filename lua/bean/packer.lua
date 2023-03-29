@@ -29,6 +29,11 @@ return require("packer").startup(function(use)
 	-- `gcc` to comment
 	use("numToStr/Comment.nvim")
 
+	use("github/copilot.vim")
+
+	use("dstein64/vim-startuptime")
+
+	-- surround selections, ysiw) to (surround_words)
 	use({ "kylechui/nvim-surround", tag = "*" })
 
 	-- toggleable terminal in neovim
@@ -53,6 +58,8 @@ return require("packer").startup(function(use)
 	})
 
 	use("MunifTanjim/prettier.nvim")
+
+	use({ "ckolkey/ts-node-action", requires = { "nvim-treesitter" } })
 
 	use({
 		"jose-elias-alvarez/null-ls.nvim",

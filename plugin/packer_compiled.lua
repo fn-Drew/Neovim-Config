@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/home/bean/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/home/bean/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/bean/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -221,10 +226,20 @@ _G.packer_plugins = {
     path = "/home/bean/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/home/bean/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
   ["trouble.nvim"] = {
     loaded = true,
     path = "/home/bean/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
+  },
+  ["ts-node-action"] = {
+    loaded = true,
+    path = "/home/bean/.local/share/nvim/site/pack/packer/start/ts-node-action",
+    url = "https://github.com/ckolkey/ts-node-action"
   },
   undotree = {
     loaded = true,
@@ -235,6 +250,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bean/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-startuptime"] = {
+    loaded = true,
+    path = "/home/bean/.local/share/nvim/site/pack/packer/start/vim-startuptime",
+    url = "https://github.com/dstein64/vim-startuptime"
   },
   ["which-key.nvim"] = {
     loaded = true,

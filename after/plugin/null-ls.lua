@@ -17,3 +17,13 @@ null_ls.setup({
 		code_actions.eslint_d,
 	},
 })
+
+-- code actions with ts-node-action
+require("null-ls").register({
+	name = "more_actions",
+	method = { require("null-ls").methods.CODE_ACTION },
+	filetypes = { "_all" },
+	generator = {
+		fn = require("ts-node-action").available_actions,
+	},
+})
